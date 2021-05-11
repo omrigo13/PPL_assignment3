@@ -315,7 +315,7 @@ const unparseLetExp = (le: LetExp) : string =>
     `(let (${unparseBindings(le.bindings)}) ${unparseLExps(le.body)})`
 
 const unparseSetExp = (se: SetExp) : string => 
-    `(set! ${se.var.var} (${unparse(se.val)}))`
+    `(set! ${se.var.var} ${unparse(se.val)})`
 
 export const unparse = (exp: Parsed): string =>
     isBoolExp(exp) ? valueToString(exp.val) :
